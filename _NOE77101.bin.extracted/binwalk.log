@@ -1,0 +1,93 @@
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+320617        0x4E469         Certificate in DER format (x509 v3), header length: 4, sequence length: 13576
+321517        0x4E7ED         Certificate in DER format (x509 v3), header length: 4, sequence length: 13576
+1224537       0x12AF59        Certificate in DER format (x509 v3), header length: 4, sequence length: 13576
+1224541       0x12AF5D        Certificate in DER format (x509 v3), header length: 4, sequence length: 13580
+3900982       0x3B8636        XML document, version: "1.0"
+4115079       0x3ECA87        mcrypt 2.2 encrypted data, mode: CBC, keymode: 4bit
+4137711       0x3F22EF        mcrypt 2.2 encrypted data, algorithm: GOST, mode: CBC, keymode: 4bit
+4137717       0x3F22F5        mcrypt 2.2 encrypted data, algorithm: GOST, mode: CBC, keymode: 4bit
+4298483       0x4196F3        mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit
+4298489       0x4196F9        mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit
+4298495       0x4196FF        mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit
+4298501       0x419705        mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit
+4298507       0x41970B        mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit
+4298513       0x419711        mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit
+4298519       0x419717        mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit
+4298525       0x41971D        mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit
+4321511       0x41F0E7        mcrypt 2.2 encrypted data, algorithm: DES, mode: CBC, keymode: 4bit
+4321553       0x41F111        mcrypt 2.2 encrypted data, mode: CBC, keymode: SHA-1 hash
+4438459       0x43B9BB        mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit
+4638938       0x46C8DA        Copyright string: "Copyright (C) 1998, Thomas G. Lane"
+4683354       0x47765A        Copyright string: "Copyright MGC 2006 - v. 1.15"
+4739848       0x485308        Base64 standard index table
+4972035       0x4BDE03        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972039       0x4BDE07        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972043       0x4BDE0B        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972047       0x4BDE0F        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972051       0x4BDE13        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972055       0x4BDE17        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972059       0x4BDE1B        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972063       0x4BDE1F        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972067       0x4BDE23        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972071       0x4BDE27        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972075       0x4BDE2B        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972079       0x4BDE2F        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972083       0x4BDE33        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972087       0x4BDE37        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972091       0x4BDE3B        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972095       0x4BDE3F        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972099       0x4BDE43        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972103       0x4BDE47        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972115       0x4BDE53        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972119       0x4BDE57        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972131       0x4BDE63        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+4972135       0x4BDE67        Certificate in DER format (x509 v3), header length: 4, sequence length: 16736
+
+DECIMAL,HEXADECIMAL,DESCRIPTION
+320617,320617,"Certificate in DER format (x509 v3), header length: 4, sequence length: 13576"
+321517,321517,"Certificate in DER format (x509 v3), header length: 4, sequence length: 13576"
+1224537,1224537,"Certificate in DER format (x509 v3), header length: 4, sequence length: 13576"
+1224541,1224541,"Certificate in DER format (x509 v3), header length: 4, sequence length: 13580"
+3900982,3900982,"XML document, version: ""1.0"""
+4115079,4115079,"mcrypt 2.2 encrypted data, mode: CBC, keymode: 4bit"
+4137711,4137711,"mcrypt 2.2 encrypted data, algorithm: GOST, mode: CBC, keymode: 4bit"
+4137717,4137717,"mcrypt 2.2 encrypted data, algorithm: GOST, mode: CBC, keymode: 4bit"
+4298483,4298483,"mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit"
+4298489,4298489,"mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit"
+4298495,4298495,"mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit"
+4298501,4298501,"mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit"
+4298507,4298507,"mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit"
+4298513,4298513,"mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit"
+4298519,4298519,"mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit"
+4298525,4298525,"mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit"
+4321511,4321511,"mcrypt 2.2 encrypted data, algorithm: DES, mode: CBC, keymode: 4bit"
+4321553,4321553,"mcrypt 2.2 encrypted data, mode: CBC, keymode: SHA-1 hash"
+4438459,4438459,"mcrypt 2.2 encrypted data, algorithm: 3DES, mode: CBC, keymode: 4bit"
+4638938,4638938,"Copyright string: ""Copyright (C) 1998, Thomas G. Lane"""
+4683354,4683354,"Copyright string: ""Copyright MGC 2006 - v. 1.15"""
+4739848,4739848,Base64 standard index table
+4972035,4972035,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972039,4972039,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972043,4972043,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972047,4972047,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972051,4972051,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972055,4972055,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972059,4972059,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972063,4972063,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972067,4972067,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972071,4972071,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972075,4972075,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972079,4972079,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972083,4972083,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972087,4972087,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972091,4972091,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972095,4972095,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972099,4972099,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972103,4972103,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972115,4972115,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972119,4972119,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972131,4972131,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"
+4972135,4972135,"Certificate in DER format (x509 v3), header length: 4, sequence length: 16736"

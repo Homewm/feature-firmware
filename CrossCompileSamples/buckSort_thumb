@@ -1,0 +1,588 @@
+	.cpu arm926ej-s
+	.eabi_attribute 20, 1
+	.eabi_attribute 21, 1
+	.eabi_attribute 23, 3
+	.eabi_attribute 24, 1
+	.eabi_attribute 25, 1
+	.eabi_attribute 26, 2
+	.eabi_attribute 30, 6
+	.eabi_attribute 34, 0
+	.eabi_attribute 18, 4
+	.file	"BucketSort.c"
+	.section	.rodata
+	.align	2
+.LC2:
+	.ascii	"[********** Before BucketSort **********]\000"
+	.align	2
+.LC4:
+	.ascii	"[********** After BucketSort **********]\000"
+	.align	2
+.LC0:
+	.word	2
+	.word	46
+	.word	5
+	.word	17
+	.word	2
+	.word	3
+	.word	99
+	.word	12
+	.word	66
+	.word	21
+	.text
+	.align	1
+	.global	main
+	.syntax unified
+	.code	16
+	.thumb_func
+	.fpu softvfp
+	.type	main, %function
+main:
+	push	{r4, r7, lr}
+	sub	sp, sp, #44
+	add	r7, sp, #0
+	movs	r3, r7
+	ldr	r2, .L3
+	ldmia	r2!, {r0, r1, r4}
+	stmia	r3!, {r0, r1, r4}
+	ldmia	r2!, {r0, r1, r4}
+	stmia	r3!, {r0, r1, r4}
+	ldmia	r2!, {r0, r1, r4}
+	stmia	r3!, {r0, r1, r4}
+	ldr	r2, [r2]
+	str	r2, [r3]
+	ldr	r3, .L3+4
+	movs	r0, r3
+	bl	puts
+	movs	r3, r7
+	movs	r1, #10
+	movs	r0, r3
+	bl	Output
+	movs	r3, r7
+	movs	r2, #10
+	movs	r1, #10
+	movs	r0, r3
+	bl	BucketSort
+	ldr	r3, .L3+8
+	movs	r0, r3
+	bl	puts
+	movs	r3, r7
+	movs	r1, #10
+	movs	r0, r3
+	bl	Output
+	movs	r3, #0
+	movs	r0, r3
+	mov	sp, r7
+	add	sp, sp, #44
+	@ sp needed
+	pop	{r4, r7, pc}
+.L4:
+	.align	2
+.L3:
+	.word	.LC0
+	.word	.LC2
+	.word	.LC4
+	.size	main, .-main
+	.section	.rodata
+	.align	2
+.LC6:
+	.ascii	"ppRadixDatappRadixData\000"
+	.align	2
+.LC8:
+	.ascii	"hhhhhhnMaxDigit\000"
+	.global	__aeabi_idiv
+	.global	__aeabi_idivmod
+	.align	2
+.LC10:
+	.ascii	"memsethere\000"
+	.text
+	.align	1
+	.global	BucketSort
+	.syntax unified
+	.code	16
+	.thumb_func
+	.fpu softvfp
+	.type	BucketSort, %function
+BucketSort:
+	push	{r4, r7, lr}
+	sub	sp, sp, #52
+	add	r7, sp, #0
+	str	r0, [r7, #12]
+	str	r1, [r7, #8]
+	str	r2, [r7, #4]
+	movs	r3, #0
+	str	r3, [r7, #44]
+	movs	r3, #0
+	str	r3, [r7, #40]
+	movs	r3, #1
+	str	r3, [r7, #36]
+	movs	r3, #0
+	str	r3, [r7, #32]
+	movs	r3, #0
+	str	r3, [r7, #28]
+	movs	r3, #0
+	str	r3, [r7, #24]
+	movs	r3, #0
+	str	r3, [r7, #20]
+	movs	r3, #0
+	str	r3, [r7, #16]
+	ldr	r3, [r7, #4]
+	lsls	r3, r3, #2
+	movs	r0, r3
+	bl	malloc
+	movs	r3, r0
+	str	r3, [r7, #20]
+	ldr	r3, [r7, #4]
+	lsls	r2, r3, #2
+	ldr	r3, [r7, #20]
+	movs	r1, #0
+	movs	r0, r3
+	bl	memset
+	movs	r3, #0
+	str	r3, [r7, #44]
+	b	.L6
+.L7:
+	ldr	r3, .L14
+	movs	r0, r3
+	bl	printf
+	ldr	r3, [r7, #44]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #20]
+	adds	r4, r2, r3
+	ldr	r3, [r7, #8]
+	lsls	r3, r3, #2
+	movs	r0, r3
+	bl	malloc
+	movs	r3, r0
+	str	r3, [r4]
+	ldr	r3, [r7, #44]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #20]
+	adds	r3, r2, r3
+	ldr	r0, [r3]
+	ldr	r3, [r7, #8]
+	lsls	r3, r3, #2
+	movs	r2, r3
+	movs	r1, #0
+	bl	memset
+	ldr	r3, [r7, #44]
+	adds	r3, r3, #1
+	str	r3, [r7, #44]
+.L6:
+	ldr	r2, [r7, #44]
+	ldr	r3, [r7, #4]
+	cmp	r2, r3
+	blt	.L7
+	ldr	r3, [r7, #4]
+	lsls	r3, r3, #2
+	movs	r0, r3
+	bl	malloc
+	movs	r3, r0
+	str	r3, [r7, #16]
+	ldr	r3, [r7, #4]
+	lsls	r2, r3, #2
+	ldr	r3, [r7, #16]
+	movs	r1, #0
+	movs	r0, r3
+	bl	memset
+	ldr	r2, [r7, #4]
+	ldr	r1, [r7, #8]
+	ldr	r3, [r7, #12]
+	movs	r0, r3
+	bl	GetMaxDigit
+	movs	r3, r0
+	str	r3, [r7, #32]
+	movs	r3, #0
+	str	r3, [r7, #44]
+	b	.L8
+.L11:
+	ldr	r3, .L14+4
+	movs	r0, r3
+	bl	printf
+	movs	r3, #0
+	str	r3, [r7, #40]
+	b	.L9
+.L10:
+	ldr	r3, [r7, #40]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #12]
+	adds	r3, r2, r3
+	ldr	r3, [r3]
+	ldr	r1, [r7, #36]
+	movs	r0, r3
+	bl	__aeabi_idiv
+	movs	r3, r0
+	ldr	r1, [r7, #4]
+	movs	r0, r3
+	bl	__aeabi_idivmod
+	movs	r3, r1
+	str	r3, [r7, #28]
+	ldr	r3, [r7, #28]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #16]
+	adds	r3, r2, r3
+	ldr	r3, [r3]
+	str	r3, [r7, #24]
+	ldr	r3, [r7, #28]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #20]
+	adds	r3, r2, r3
+	ldr	r2, [r3]
+	ldr	r3, [r7, #24]
+	lsls	r3, r3, #2
+	adds	r3, r2, r3
+	ldr	r2, [r7, #40]
+	lsls	r2, r2, #2
+	ldr	r1, [r7, #12]
+	adds	r2, r1, r2
+	ldr	r2, [r2]
+	str	r2, [r3]
+	ldr	r3, [r7, #28]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #16]
+	adds	r3, r2, r3
+	ldr	r2, [r7, #28]
+	lsls	r2, r2, #2
+	ldr	r1, [r7, #16]
+	adds	r2, r1, r2
+	ldr	r2, [r2]
+	adds	r2, r2, #1
+	str	r2, [r3]
+	ldr	r3, [r7, #40]
+	adds	r3, r3, #1
+	str	r3, [r7, #40]
+.L9:
+	ldr	r2, [r7, #40]
+	ldr	r3, [r7, #8]
+	cmp	r2, r3
+	blt	.L10
+	ldr	r3, [r7, #4]
+	ldr	r2, [r7, #16]
+	ldr	r1, [r7, #20]
+	ldr	r0, [r7, #12]
+	bl	CopyData
+	ldr	r3, [r7, #4]
+	lsls	r2, r3, #2
+	ldr	r3, [r7, #16]
+	movs	r1, #0
+	movs	r0, r3
+	bl	memset
+	ldr	r3, .L14+8
+	movs	r0, r3
+	bl	printf
+	ldr	r3, [r7, #36]
+	ldr	r2, [r7, #4]
+	muls	r3, r2
+	str	r3, [r7, #36]
+	ldr	r3, [r7, #44]
+	adds	r3, r3, #1
+	str	r3, [r7, #44]
+.L8:
+	ldr	r2, [r7, #44]
+	ldr	r3, [r7, #32]
+	cmp	r2, r3
+	blt	.L11
+	movs	r3, #0
+	str	r3, [r7, #44]
+	b	.L12
+.L13:
+	ldr	r3, [r7, #44]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #20]
+	adds	r3, r2, r3
+	ldr	r3, [r3]
+	movs	r0, r3
+	bl	free
+	ldr	r3, [r7, #44]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #20]
+	adds	r3, r2, r3
+	movs	r2, #0
+	str	r2, [r3]
+	ldr	r3, [r7, #44]
+	adds	r3, r3, #1
+	str	r3, [r7, #44]
+.L12:
+	ldr	r2, [r7, #44]
+	ldr	r3, [r7, #4]
+	cmp	r2, r3
+	blt	.L13
+	ldr	r3, [r7, #20]
+	movs	r0, r3
+	bl	free
+	movs	r3, #0
+	str	r3, [r7, #20]
+	nop
+	mov	sp, r7
+	add	sp, sp, #52
+	@ sp needed
+	pop	{r4, r7, pc}
+.L15:
+	.align	2
+.L14:
+	.word	.LC6
+	.word	.LC8
+	.word	.LC10
+	.size	BucketSort, .-BucketSort
+	.section	.rodata
+	.align	2
+.LC12:
+	.ascii	"GetMaxDigit\000"
+	.text
+	.align	1
+	.global	GetMaxDigit
+	.syntax unified
+	.code	16
+	.thumb_func
+	.fpu softvfp
+	.type	GetMaxDigit, %function
+GetMaxDigit:
+	push	{r7, lr}
+	sub	sp, sp, #32
+	add	r7, sp, #0
+	str	r0, [r7, #12]
+	str	r1, [r7, #8]
+	str	r2, [r7, #4]
+	movs	r3, #0
+	str	r3, [r7, #28]
+	ldr	r3, .L26
+	movs	r0, r3
+	bl	printf
+	movs	r3, #0
+	str	r3, [r7, #24]
+	movs	r3, #0
+	str	r3, [r7, #20]
+	movs	r3, #1
+	str	r3, [r7, #16]
+	ldr	r3, [r7, #8]
+	cmp	r3, #0
+	bgt	.L17
+	movs	r3, #1
+	rsbs	r3, r3, #0
+	b	.L18
+.L17:
+	ldr	r3, [r7, #12]
+	ldr	r3, [r3]
+	str	r3, [r7, #24]
+	ldr	r3, [r7, #24]
+	cmp	r3, #0
+	bge	.L20
+	ldr	r3, [r7, #24]
+	rsbs	r3, r3, #0
+	str	r3, [r7, #24]
+	b	.L20
+.L23:
+	ldr	r3, [r7, #16]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #12]
+	adds	r3, r2, r3
+	ldr	r3, [r3]
+	str	r3, [r7, #20]
+	ldr	r3, [r7, #20]
+	cmp	r3, #0
+	bge	.L21
+	ldr	r3, [r7, #20]
+	rsbs	r3, r3, #0
+	str	r3, [r7, #20]
+.L21:
+	ldr	r2, [r7, #24]
+	ldr	r3, [r7, #20]
+	cmp	r2, r3
+	bge	.L22
+	ldr	r3, [r7, #20]
+	str	r3, [r7, #24]
+.L22:
+	ldr	r3, [r7, #16]
+	adds	r3, r3, #1
+	str	r3, [r7, #16]
+.L20:
+	ldr	r2, [r7, #16]
+	ldr	r3, [r7, #8]
+	cmp	r2, r3
+	blt	.L23
+	b	.L24
+.L25:
+	ldr	r3, [r7, #28]
+	adds	r3, r3, #1
+	str	r3, [r7, #28]
+	ldr	r1, [r7, #4]
+	ldr	r0, [r7, #24]
+	bl	__aeabi_idiv
+	movs	r3, r0
+	str	r3, [r7, #24]
+.L24:
+	ldr	r3, [r7, #24]
+	cmp	r3, #0
+	bgt	.L25
+	ldr	r3, [r7, #28]
+.L18:
+	movs	r0, r3
+	mov	sp, r7
+	add	sp, sp, #32
+	@ sp needed
+	pop	{r7, pc}
+.L27:
+	.align	2
+.L26:
+	.word	.LC12
+	.size	GetMaxDigit, .-GetMaxDigit
+	.section	.rodata
+	.align	2
+.LC14:
+	.ascii	"pRadixDataCount\000"
+	.align	2
+.LC16:
+	.ascii	"pRadixDataCoqweunt\000"
+	.text
+	.align	1
+	.global	CopyData
+	.syntax unified
+	.code	16
+	.thumb_func
+	.fpu softvfp
+	.type	CopyData, %function
+CopyData:
+	push	{r7, lr}
+	sub	sp, sp, #32
+	add	r7, sp, #0
+	str	r0, [r7, #12]
+	str	r1, [r7, #8]
+	str	r2, [r7, #4]
+	str	r3, [r7]
+	movs	r3, #0
+	str	r3, [r7, #28]
+	movs	r3, #0
+	str	r3, [r7, #24]
+	movs	r3, #0
+	str	r3, [r7, #20]
+	b	.L29
+.L32:
+	movs	r3, #0
+	str	r3, [r7, #24]
+	b	.L30
+.L31:
+	ldr	r3, .L33
+	movs	r0, r3
+	bl	printf
+	ldr	r3, [r7, #20]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #12]
+	adds	r3, r2, r3
+	ldr	r2, [r7, #28]
+	lsls	r2, r2, #2
+	ldr	r1, [r7, #8]
+	adds	r2, r1, r2
+	ldr	r1, [r2]
+	ldr	r2, [r7, #24]
+	lsls	r2, r2, #2
+	adds	r2, r1, r2
+	ldr	r2, [r2]
+	str	r2, [r3]
+	ldr	r3, [r7, #20]
+	adds	r3, r3, #1
+	str	r3, [r7, #20]
+	ldr	r3, .L33+4
+	movs	r0, r3
+	bl	printf
+	ldr	r3, [r7, #24]
+	adds	r3, r3, #1
+	str	r3, [r7, #24]
+.L30:
+	ldr	r3, [r7, #28]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #4]
+	adds	r3, r2, r3
+	ldr	r2, [r3]
+	ldr	r3, [r7, #24]
+	cmp	r2, r3
+	bgt	.L31
+	ldr	r3, [r7, #28]
+	adds	r3, r3, #1
+	str	r3, [r7, #28]
+.L29:
+	ldr	r2, [r7, #28]
+	ldr	r3, [r7]
+	cmp	r2, r3
+	blt	.L32
+	nop
+	mov	sp, r7
+	add	sp, sp, #32
+	@ sp needed
+	pop	{r7, pc}
+.L34:
+	.align	2
+.L33:
+	.word	.LC14
+	.word	.LC16
+	.size	CopyData, .-CopyData
+	.section	.rodata
+	.align	2
+.LC18:
+	.ascii	"Output\000"
+	.align	2
+.LC20:
+	.ascii	"%d, \000"
+	.align	2
+.LC22:
+	.ascii	"%d\012\000"
+	.text
+	.align	1
+	.global	Output
+	.syntax unified
+	.code	16
+	.thumb_func
+	.fpu softvfp
+	.type	Output, %function
+Output:
+	push	{r7, lr}
+	sub	sp, sp, #16
+	add	r7, sp, #0
+	str	r0, [r7, #4]
+	str	r1, [r7]
+	movs	r3, #0
+	str	r3, [r7, #12]
+	b	.L36
+.L37:
+	ldr	r3, .L38
+	movs	r0, r3
+	bl	printf
+	ldr	r3, [r7, #12]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #4]
+	adds	r3, r2, r3
+	ldr	r2, [r3]
+	ldr	r3, .L38+4
+	movs	r1, r2
+	movs	r0, r3
+	bl	printf
+	ldr	r3, [r7, #12]
+	adds	r3, r3, #1
+	str	r3, [r7, #12]
+.L36:
+	ldr	r3, [r7]
+	subs	r2, r3, #1
+	ldr	r3, [r7, #12]
+	cmp	r2, r3
+	bgt	.L37
+	ldr	r3, [r7, #12]
+	lsls	r3, r3, #2
+	ldr	r2, [r7, #4]
+	adds	r3, r2, r3
+	ldr	r2, [r3]
+	ldr	r3, .L38+8
+	movs	r1, r2
+	movs	r0, r3
+	bl	printf
+	nop
+	mov	sp, r7
+	add	sp, sp, #16
+	@ sp needed
+	pop	{r7, pc}
+.L39:
+	.align	2
+.L38:
+	.word	.LC18
+	.word	.LC20
+	.word	.LC22
+	.size	Output, .-Output
+	.ident	"GCC: (Buildroot 2018.02.2) 6.4.0"
+	.section	.note.GNU-stack,"",%progbits
